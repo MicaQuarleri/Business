@@ -1,0 +1,37 @@
+<h2 mat-dialog-title>{{data.action|titlecase}} Product</h2>
+<mat-dialog-content class="mat-typography">
+    <form [formGroup]="formProduct" (ngSubmit)="save()">
+        <div class="mb-3 row">
+            <label class="form-label">SKU*</label>
+            <input class="form-control" type="text" formControlName="sku">
+            <span class="form-text text-danger" *ngIf="validateInput('sku')">{{idErrorMsg}}</span>
+        </div>
+        <div class="mb-3 row">
+            <label class="form-label">Description*</label>
+            <input class="form-control" type="text" formControlName="description">
+            <span class="form-text text-danger" *ngIf="validateInput('description')">Insert a description</span>
+        </div>
+        <div class="mb-3 row">
+            <label class="form-label">Price*</label>
+            <input class="form-control" type="text" formControlName="price">
+            <span class="form-text text-danger" *ngIf="validateInput('price')">Insert a price bigger than zero</span>
+        </div>
+        <div class="mb-3 row">
+            <label class="form-label">Descount</label>
+            <input class="form-control" type="text" formControlName="descount">
+            <span class="form-text text-danger" *ngIf="validateInput('descount')">Insert a descount bigger than
+                zero</span>
+        </div>
+        <div class="mb-3 row">
+            <label class="form-label">Stock*</label>
+            <input class="form-control" type="text" formControlName="stock">
+            <span class="form-text text-danger" *ngIf="validateInput('stock')">Insert a stock bigger than
+                zero</span>
+        </div>
+        <mat-dialog-actions>
+            <button mat-button mat-dialog-close>Cancel</button>
+            <button *ngIf="data.action !=='show'" mat-button [mat-dialog-close]="true" [disabled]="formProduct.invalid || formProduct.pristine"
+                type="submit">Save</button>
+        </mat-dialog-actions>
+    </form>
+</mat-dialog-content>

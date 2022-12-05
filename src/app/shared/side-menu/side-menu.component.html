@@ -1,0 +1,22 @@
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav>
+        <mat-toolbar>
+            <span class="spacer"></span>
+            <button mat-icon-button (click)="sidenav.toggle()">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-toolbar>
+        <mat-nav-list role="list">
+            <mat-list-item *ngFor="let item of businessMenu" [routerLink]="[item.route]" routerLinkActive="active"
+                role="listitem" class="me-3" (click)="sidenav.toggle()">
+                <mat-icon class="me-1">{{item.icon}}</mat-icon>{{item.name}}
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-toolbar>
+        <button mat-icon-button (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+</mat-sidenav-container>

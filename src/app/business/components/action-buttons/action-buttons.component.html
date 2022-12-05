@@ -1,0 +1,18 @@
+<div class="top-container">
+    <div>
+        <button matTooltip="Export {{item}}s" mat-icon-button (click)="sendAction('export')">
+            <mat-icon>download</mat-icon>
+        </button>
+    </div>
+    <div>
+        <button mat-icon-button matTooltip="Add {{item}}" (click)="sendAction('add')">
+            <mat-icon>add</mat-icon>
+        </button>
+    </div>
+    <div class="top-container">
+        <input type="file" (change)="loadData($event)" onclick="value=null" class="mt-2" accept=".xlsx, .ods, .txt">
+        <button mat-icon-button matTooltip="Import {{item}}s" (click)="sendAction('import')" [disabled]="!fileLoad">
+            <mat-icon>upload</mat-icon>
+        </button>
+    </div>
+</div>

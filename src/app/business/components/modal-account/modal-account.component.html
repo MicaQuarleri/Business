@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Account Sale</h1>
+<mat-dialog-content>
+  <mat-label>Inser Dni:</mat-label>
+  <input placeholder="dni" type="text" matInput (keypress)="findDni($event)" #dni>
+  <mat-error *ngIf="error">The Client doesn´t exist</mat-error>
+</mat-dialog-content>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+  <button mat-button [mat-dialog-close]="{dni:dni.value,clientExist:clientExist}" *ngIf="error">Add client</button>
+  <button mat-button [mat-dialog-close]="{dni:dni.value,clientExist:clientExist}" *ngIf="clientExist">Update client</button>
+</div>

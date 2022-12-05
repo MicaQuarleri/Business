@@ -1,1 +1,85 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.spacer {
+    flex: 1 1 auto
+}
+
+.main-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.top-container {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+}
+
+.table-container {
+  width: 700px;
+  height: 300px;
+  overflow: auto;
+}
+
+.table {
+  text-align: center;
+}
+
+.table td {
+    padding-top: 10px;
+}
+
+.card {
+  margin-top: 40px;
+  width: 80%;
+  text-align: center;
+}
+
+.card mat-card-title{
+  text-align: center;
+}
+
+.card mat-card-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.card mat-card-content p {
+  margin: 0px;
+}
+
+.loading-spinner {
+    background: radial-gradient(rgba(20, 20, 20, .8), rgba(0, 0, 0, .8));
+    background: -webkit-radial-gradient(rgba(20, 20, 20, .8), rgba(0, 0, 0, .8));
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+}
+
+.loading-spinner .spinner {
+    align-self: end;
+}
+
+.loading-message {
+    text-align: center;
+    align-self: start;
+    color: white;
+}
