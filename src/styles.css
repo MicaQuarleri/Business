@@ -75,7 +75,7 @@ body {
 }
 
 .loading-spinner .spinner {
-    align-self: end;
+    align-self: center;
 }
 
 .loading-message {

@@ -15,20 +15,6 @@ export class ValidationsService {
 
   constructor(private http: HttpClient) { }
 
-  validateDni(control: AbstractControl): Observable<ValidationErrors | null> {
-    const dni = control.value
-    return this.http.get<any[]>(`http://localhost:3000/clients?q=${dni}`).pipe(
-      map(resp => {
-        return (resp.length === 0) ? null : { dniExist: true }
-      })
-    )
-  }
-
-  validateId(control: AbstractControl): Observable<ValidationErrors | {}> {
-    const id = control.value
-    return this.http.get<any[]>(`http://localhost:3000/products/${id}`)
-  }
-
   validateImportDataClients(file: any): string[] {
     const errors: string[] = []
     const search=file.reduce((acc:any,client:any)=>{

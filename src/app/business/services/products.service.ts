@@ -8,7 +8,7 @@ import { Product } from '../interfaces/produc';
 })
 export class ProductsService {
 
-  private baseUrl = "http://localhost:3000"
+  private baseUrl = "https://business-back.onrender.com"
 
   constructor(private http: HttpClient) { }
 
